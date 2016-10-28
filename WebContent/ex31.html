@@ -6,16 +6,20 @@
 <script type="text/javascript">
 	$( function() {
 		/* 코드를 완성하세요 */
-
+		setTimeout(function() {
+			$("strong, p").wrapAll("<div>").parent().css({
+				"padding":"10px",
+				"border":"10px solid #aaa",
+				"width":"150px",
+				"textAlign":"center"
+			});
+		}, 1000);
 		
 	} );  
 </script>
 </head>
 <body>
-
-
 <strong>타이틀입니다.</strong>
 <p>내용입니다.</p>
-
 </body>
 </html>

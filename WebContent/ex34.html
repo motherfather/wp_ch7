@@ -6,12 +6,26 @@
 <script type="text/javascript">
 	$( function() {
 		/* 코드를 완성하세요 */
+		$("h1 a").attr({
+			"href":"http://www.naver.com",  
+			"target":"_blank",
+			"title":"네이버로 떠납니다."
+		}); // 쓰기
+		$("a:link, a:visited, a:active, a:hover").css({
+			"color":"#333",
+			"textDecoration":"none"
+		});
+		
+		console.log($("h1 a").attr("href")); // 읽기
+		
+		// 2개 쓰는 경우 1개만 쓰면 읽기, 2개 쓰면 쓰기!!!
+		
 } );  
 </script>
 </head>
 <body>
 
-<h1><a href="http://www.smu.ac.kr" target="_blnk" title="우리학교 홈페이지 가기">홈페이지 가기</a></h1>
+<h1><a href="">홈페이지 가기</a></h1>
 
 </body>
 </html>

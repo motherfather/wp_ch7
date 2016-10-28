@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>리스트를 이용한 메뉴 만들기</title>
+<style type="text/css">
+* { margin:0; padding:0 }
+body { font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
+.tab-box { width:520px; margin:100px auto; }
+.tab-box ul { list-style-type:none; height:29px; }
+.tab-box ul li { float:right; width:100px; height:22px; 
+border:1px solid #999; background-color:#ccc; margin-right:2px; text-align:center; 
+padding-top:5px; border-top-left-radius:10px; border-top-right-radius:10px; cursor:pointer; }
+.tab-box div { margin-top:-1px; width:516px; border:1px solid #999; text-align:center;
+line-height:200px; }
+.tab-box ul li.selected { background-color:#fc6; cursor:default; }
+</style>
+<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("ul li").click(function() {
+		// unselect tab
+		$(".selected").removeClass("selected");
+		
+		// select tab
+		var $li = $(this);
+		$li.addClass("selected");
+		
+		// unselect view
+		$("p:visible").hide();
+		
+		// select view
+		var viewId = $li.attr("data-view");
+		$("#" + viewId).show();
+	});
+});
+</script>
+</head>
+<body>
+<div class="tab-box">
+	<ul>
+        <li data-view="view5">메뉴 5</li>
+        <li data-view="view4">메뉴 4</li>
+        <li data-view="view3">메뉴 3</li>
+        <li data-view="view2">메뉴 2</li>
+        <li data-view="view1" class="selected">메뉴 1</li>
+    </ul>
+    <div>
+    	<p id="view1" style="display:block;">
+    		탭뷰1입니다.
+    	</p>
+    	<p id="view2" style="display:none">
+    		탭뷰2입니다.
+    	</p>
+    	<p id="view3" style="display:none">
+    		탭뷰3입니다.
+    	</p>
+    	<p id="view4" style="display:none">
+    		탭뷰4입니다.
+    	</p>
+    	<p id="view5" style="display:none">
+    		탭뷰5입니다.
+    	</p>
+    	
+    </div>
+</div>    
+</body>
+</html>

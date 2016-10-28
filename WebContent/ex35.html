@@ -27,10 +27,25 @@ li.on	{ background-color:#287FC2; color:#fff }
 <script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript">
 	$( function() {
-			
 		/* 코드를 완성하세요 */
-		
-	} );  
+		$("ul li").mouseover(function() {
+			// 이벤트 핸들러 안에서 this는 HTML Element 객체이다.
+			// 따라서 jQuery API를 사용하기 위해서는 $( )로 랩핑을 한다.
+			var $li = $(this);
+			//$li.css({
+			//	"backgroundColor":"#287fc2",
+			//	"color":"#fff"
+			//});
+			$li.addClass("on");
+		}).mouseout(function() {
+			var $li = $(this);
+			//$li.css({
+			//	"backgroundColor":"#fff",
+			//	"color":"#6c3333"
+			//	});
+			$li.removeClass("on")
+		});
+	});  
 </script>
 </head>
 <body>

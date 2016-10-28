@@ -9,7 +9,11 @@
 		<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
 		<script type="text/javascript">
 		$(function(){
-			$(".red strong").css("color","red");
+			setTimeout(function() {
+				$(".red strong").css("color", "red");
+				$(".blue strong").css("color", "blue");
+				
+			}, 1000);
 		});
 		</script>
 	</head>

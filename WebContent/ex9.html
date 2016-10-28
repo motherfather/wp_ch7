@@ -9,13 +9,16 @@
 		<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
 		<script type="text/javascript">
 		$(function(){
-			$("li > strong").css("color","red");
+			setTimeout(function() {
+				$("li > div > strong, li > div > span").css("color","red");
+				
+			}, 1000);
 		});
 		</script>
 	</head>
 	<body>
 		<ul>
-			<li><strong> 텍스트</strong> 텍스트 텍스트 텍스트 텍스트</li>
+			<li><strong> 텍스트</strong> <span>텍스트 텍스트</span> 텍스트 텍스트</li>
 			<li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
 			<li>
 				<div>

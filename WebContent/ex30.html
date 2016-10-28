@@ -6,7 +6,13 @@
 <script type="text/javascript">
 	$( function() {
 		/* 코드를 완성하세요 */
-} );  
+		setTimeout(function() {
+			$('.d1').wrap('<h1>');
+			$('.d2').wrap('<h3>').
+			parent().
+			css("padding-left", "20px");
+		}, 1000);
+	});  
 </script>
 </head>
 <body>

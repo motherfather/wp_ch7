@@ -8,6 +8,26 @@
 		<title>sample1</title>
 		<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
 		<script type="text/javascript">
+		$(function() {
+			setTimeout(function() {
+				var $li = $("li");
+				$li.css("color", "#f00");
+				
+				//jquery object?
+				/*
+				console.log($li.length);
+				console.log($li[0]); // HTML Element
+				console.log($li.get(0)); // HTML Element
+				
+				$li[0].style.color = "#ff0";
+				$li.get(1).style.color = "#f0f";
+				
+				// wrap jquery object
+				$($li[0]).css("color", "#0ff");
+				$($li.get(1)).css("color", "#0f0");
+				*/
+			},2000);
+		})
 		</script>
 	</head>
 	<body>

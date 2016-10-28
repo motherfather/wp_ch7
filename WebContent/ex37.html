@@ -5,31 +5,33 @@
 <title>sample1</title>
 <script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript">
+	var images = [ "국화:Chrysanthemum.jpg", "사막:Desert.jpg",
+			"수국:Hydrangeas.jpg", "해파리:Jellyfish.jpg", "코알라:Koala.jpg",
+			"등대:Lighthouse.jpg", "펭귄:Penguins.jpg", "툴립:Tulips.jpg" ];
 
-var images = [ 
-	"국화:Chrysanthemum.jpg", 
-	"사막:Desert.jpg", 
-	"수국:Hydrangeas.jpg", 
-	"해파리:Jellyfish.jpg", 
-	"코알라:Koala.jpg", 
-	"등대:Lighthouse.jpg", 
-	"펭귄:Penguins.jpg", 
-	"툴립:Tulips.jpg" ];
+	var changeImage = function() {
+		var index = Math.floor(Math.random() * images.length);
+		var imageInfos = images[index].split(":");
+		$("p img").attr({
+			"src" : "images/" + imageInfos[1],
+			"alt" : imageInfos[0],
+			//"title" : imageInfos[0]
+		});
+	}
 
-$(function(){
+	$(function() {
+		$("button").click(changeImage);
 
-	$("button").click(function(){
-		// 랜덤 변수 
-		var result = Math.floor( Math.random() * (images.length-1)  ) + 1;
-	});
-	
-});
+		$("p img").dblclick(function() {
+			alert($(this).attr("alt"));
+		}).mouseover(changeImage);
+	})
 </script>
 </head>
 <body>
 	<button>화면을 변경</button>
 	<p>
-		<img src="images/Desert.jpg" alt="사막" />
+		<img src="images/Desert.jpg" alt="사막" style="width: 800px;" />
 	</p>
 </body>
 </html>

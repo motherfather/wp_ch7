@@ -8,11 +8,21 @@
 		<title>sample16</title>
 		<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
 		<script type="text/javascript">
+		$(function() {
+			setTimeout(function() {
+				$("li[id]").css("color", "red");
+				$("li[class]").css("color", "blue");
+				$("li[title]").css("fontWeight", "bold");
+				
+				$("li[class='second']").css("fontStyle", "italic");
+				$("li[class!='second']").css("textDecoration", "underline");
+			}, 1000);
+		});
 		</script>
 	</head>
-	<body style="overflow-y:scroll">
-		<ul>
-			<li id="first"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+	<body>
+		<ul style="width:250px; height:200px; overflow-y:scroll; overflow-x:scroll;" title="안녕하세요"; >
+			<li title="first"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
 			<li class="second"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
 			<li id="third"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
 			<li class="fourth"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>

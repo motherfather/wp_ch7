@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-1.9.0.js"></script>
+<script>
+$(function() {
+	$("#ajax-btn").click(function() {
+		$.ajax({
+			url:"/mysite3/ajax?no=10&name=kickscar",
+			type:"get",
+			dataType:"json",
+			data:"",	// post 방식으로 데이터를 보낼 때 Query String이 쓴다 (date:"?no=10&name=kickscar",)
+			// contentType:"application/json", // 데이터를 Query String이 아닌 json형식으로 보낼 때 (date:"{no:'10', name:'kickscar'}",)
+			success:function(response) { // callback
+				$(response).each(function(index, vo) {
+					console.log(vo);
+				});
+			},
+			error:function(jqXHR, status, e) {
+				console.log(status + ":" + e);
+			}
+		});
+	});
+});
+</script>
+</head>
+<body>
+	<button id="ajax-btn">데이터 가져오기</button>
+</body>
+</html>
